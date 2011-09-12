@@ -40,7 +40,12 @@ directory, and follow the on-screen instructions.
 Why Open Source?
 ----------------
 
-To be completed.
+Trellis Desk has traditionally been developed in our spare time, which makes it
+rather difficult to release new versions on a reliable schedule. Our customers
+have been clamoring for more frequent updates or the ability to merge their own
+fixes and additions into the codebase. We are open-sourcing this product because
+we want to see it continue to grow and thrive with the help of the community,
+rather than be hampered by limited resources.
 
 
 Plan
@@ -65,7 +70,15 @@ Of course, head on over to the
 Contributing
 ------------
 
-To be completed.
+Everyone is invited to contribute their own bug fixes and feature additions.
+GitHub pull requests are preferred, but if you want to attach a diff to a ticket
+or link us to your branch, that's cool too.
+
+Find a bug in Trellis Desk? Please submit a
+[new issue on GitHub](https://github.com/ACCORD5/TrellisDesk/issues/new).
+
+Or maybe you're in the mood to hunt some bugs yourself? Hit up the
+[GitHub issue tracker](https://github.com/ACCORD5/TrellisDesk/issues)!
 
 In all honesty, many will find the Trellis Desk 2.0 code unorganized.  Many of
 the code originates from over two years ago before I (DJ Tarazona) had a deep
