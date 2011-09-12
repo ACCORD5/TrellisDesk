@@ -692,7 +692,7 @@ class td_install {
 
             if ( $this->trellis->cache->data['install']['antispam']['enable'] )
             {
-                $this->trellis->load_antispam( $this->trellis->cache->data['install']['antispam'] );
+                $this->trellis->load_antispam_from_array( $this->trellis->cache->data['install']['antispam'] );
 
                 if ( ! $this->trellis->antispam->check_system() ) $this->step_4( array( 'error' => $this->trellis->antispam->get_error() ) );
             }
@@ -795,7 +795,7 @@ class td_install {
 
             if ( $this->trellis->cache->data['install']['email']['enable'] && ( $this->trellis->cache->data['install']['email']['transport'] == 'smtp' || $this->trellis->cache->data['install']['email']['transport'] == 'sendmail' ) )
             {
-                $this->trellis->load_email( $this->trellis->cache->data['install']['email'] );
+                $this->trellis->load_email_from_array( $this->trellis->cache->data['install']['email'] );
 
                 if ( ! $this->trellis->email->test() )
                 {
