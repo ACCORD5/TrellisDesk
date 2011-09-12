@@ -149,7 +149,7 @@ class trellis_install extends trellis {
     # @ Load Email
     #=======================================
 
-    function load_email($config)
+    function load_email_from_array($config)
     {
         if ( ! $this->email )
         {
@@ -180,7 +180,7 @@ class trellis_install extends trellis {
     # @ Load Anti-Spam
     #=======================================
 
-    function load_antispam($config)
+    function load_antispam_from_array($config)
     {
         if ( ! file_exists( TD_CLASS . $config['method'] .'.php' ) ) trigger_error( "Anti-Spam - Class file not found: ". $config['method'], E_USER_WARNING );
 
