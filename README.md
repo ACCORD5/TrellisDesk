@@ -24,7 +24,7 @@ Installation
 ------------
 
 Trellis Desk 2.0 is in an early development stage.  We strongly recommend
-against using Trellis Desk 2.0 in a production enviornment.  To install, simply
+against using Trellis Desk 2.0 in a production environment.  To install, simply
 upload all files to your web server, point your browser to the *install*
 directory, and follow the on-screen instructions.
 
