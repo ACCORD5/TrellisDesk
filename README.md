@@ -12,6 +12,14 @@ Plus, it's completely free – you'll never have to pay any license fees to use
 Trellis Desk.
 
 
+Status
+------
+
+Trellis Desk 2.0 is under heavy development and not recommended for a production
+environment.  With the help of user contributions and the support of the
+community, we hope to have a stable, documented release by the end of 2011.
+
+
 Requirements
 ------------
 
@@ -35,8 +43,14 @@ Why Open Source?
 To be completed.
 
 
-Contribute
-----------
+Plan
+--------
+
+To be completed.
+
+
+Contributing
+------------
 
 To be completed.
 
