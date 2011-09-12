@@ -46,7 +46,20 @@ To be completed.
 Plan
 --------
 
-To be completed.
+Let's get the ACP (backend) as closed to finished as possible before working on
+the frontend.  We're almost there!
+
+The frontend needs a good amount of work.  It's using a lot of old code from
+Trellis Desk 1.0.  Let's not worry about looks right now.  Focus on
+functionality.  We'll skin it up all nice and pretty later.
+
+### Notable ACP To-Dos
+
+### Notable Frontend To-Dos
+* User registration
+
+Of course, head on over to the
+[issue tracker](https://github.com/ACCORD5/TrellisDesk/issues) for more.
 
 
 Contributing
@@ -66,7 +79,7 @@ I Need Help!
 ------------
 
 Don't hesitate to check out our
-[support forums](http://forums.accord5.com/forum/peer-to-peer-support)
+[support forums](http://forums.accord5.com/forum/peer-to-peer-support).
 
 
 Questions and Comments

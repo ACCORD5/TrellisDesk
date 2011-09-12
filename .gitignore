@@ -33,6 +33,8 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.buildpath
+.externalToolBuilders/
 
 # CDT-specific
 .cproject
