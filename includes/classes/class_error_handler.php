@@ -26,7 +26,7 @@ class td_class_error_handler {
     # @ Error Handler
     #=======================================
 
-    public function error_handler($errno, $errmsg, $errfile, $errline, $errcontext)
+    public static function error_handler($errno, $errmsg, $errfile, $errline, $errcontext)
     {
         $process = false;
 
