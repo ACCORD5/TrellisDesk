@@ -40,7 +40,12 @@ directory, and follow the on-screen instructions.
 Why Open Source?
 ----------------
 
-To be completed.
+Trellis Desk has traditionally been developed in our spare time, which makes it
+rather difficult to release new versions on a reliable schedule. Our customers
+have been clamoring for more frequent updates or the ability to merge their own
+fixes and additions into the codebase. We are open-sourcing this product because
+we want to see it continue to grow and thrive with the help of the community,
+rather than be hampered by limited resources.
 
 
 Plan
