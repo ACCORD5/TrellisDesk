@@ -1,0 +1,609 @@
+@charset "UTF-8";
+/*
+=====================================
+ACCORD5 Administration Control Panel
+Global stylesheet
+v1.1.1, created Wed Jun 27 2007
+Unauthorized use & reproduction prohibited
+=====================================
+(C) 2007 Aaron Draczynski
+ACCORD5
+http://www.accord5.com
+=====================================
+TIME SPENT DEVELOPING STYLE SHEET:
+A heck of a lot!
+=====================================
+*/
+
+/*
+=====================================
+GLOBAL: General/header block styles
+=====================================
+*/
+
+body {
+    padding: 0px;
+    margin: 0 0 20px 0;
+    background-image: url(../../images/default/acp_bkg.jpg);
+    background-repeat: repeat-x;
+    background-color: #EDF4F9;
+}
+
+img      { border: 0px;  }
+.lefty   { float: left;  }
+.righty  { float: right; }
+
+#acpwrap {
+    padding-top: 8px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#header {
+    height: 58px;
+    padding: 0px;
+    margin: 0px;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #2D4E75;
+}
+
+#header .righty {
+    padding-top: 28px;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #476A8C;
+}
+
+#header .righty a {
+    color: #AC241A;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+#header .righty a:hover {
+    color: #EB0000;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/*
+=====================================
+GLOBAL: Navigation bar styles
+=====================================
+*/
+
+#navbar {
+    height: 36px;
+    padding: 0px;
+    margin: 0px;
+    background-image: url(../../images/default/navbar_bkg.jpg);
+    background-repeat: repeat-x;
+}
+
+#navbar .lefty {
+    background-image: url(../../images/default/navbar_cap_left.jpg);
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 36px;
+}
+
+#navbar .righty {
+    background-image: url(../../images/default/navbar_cap_right.jpg);
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 36px;
+}
+
+#navbar ul {
+    padding-top: 12px;
+    padding-left: 20px;
+    margin: 0px;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFF;
+    list-style-type: none;
+}
+
+#navbar ul li {
+    display: inline;
+    padding-right: 42px;
+}
+
+#navbar ul li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: #B4CEE7;
+    text-decoration: none;
+}
+
+.current {
+    color: #FFC341;
+}
+
+/*
+=====================================
+GLOBAL: Content block styles
+=====================================
+*/
+
+#content {
+    padding: 0px;
+    margin: 0px;
+    border-left: 2px solid #7BA0C1;
+    border-right: 2px solid #7BA0C1;
+    background-color: #FFF;
+}
+
+#acpblock {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 7px 7px 4px 7px;
+    background-image: url(../../images/default/content_bkg.jpg);
+    background-repeat: repeat-x;
+    background-color: #FFF;
+}
+
+/*
+=====================================
+GLOBAL: Page ID style
+=====================================
+*/
+
+.pageid {
+    padding-left: 6px;
+    padding-top: 6px;
+    padding-bottom: 3px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: #73A940;
+    letter-spacing: -0.5px;
+}
+
+/*
+=====================================
+GLOBAL: Info bar style
+=====================================
+*/
+
+#infobar {
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin: 6px 6px 8px 6px;
+    border: 1px solid #76A743;
+    background-image: url(../../images/default/infobar_bkg.jpg);
+    background-repeat: repeat-x;
+    background-color: #ADD074;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    font-style: italic;
+    color: #608339;
+}
+
+/*
+=====================================
+GLOBAL: ACP inner container style
+=====================================
+*/
+
+#acpinner {
+    margin: 6px;
+    padding: 0px;
+    border: 0px;
+}
+
+/*
+=====================================
+GLOBAL: ACP page menu
+=====================================
+*/
+
+#acpmenu {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 6px;
+    margin-right: 8px;
+    border: 1px solid #B2B2B2;
+    background-color: #F6F6F6;
+}
+
+#acpmenu ul {
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #686868;
+    list-style-type: none;
+}
+
+#acpmenu ul li {
+    margin: 0px;
+    padding: 5px;
+    border-bottom: 1px solid #C7C7C7;
+    color: #686868;
+}
+
+#acpmenu ul li a {
+    color: #686868;
+    text-decoration: none;
+}
+
+#acpmenu ul li a:hover {
+    color: #9D9D9D;
+    text-decoration: none;
+}
+
+.menucat {
+    padding: 0 5px 5px 5px;
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #555;
+    border-bottom: 1px solid #999;
+    line-height: 19px;
+}
+
+.menucat a {
+    color: #555;
+    text-decoration: none;
+}
+
+#acphelp {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 26px;
+    padding-bottom: 4px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    font-style: italic;
+    color: #A5A5A5;
+    text-align: center;
+}
+
+#acphelp a {
+    color: #A5A5A5;
+    text-decoration: none;
+}
+
+/*
+=====================================
+GLOBAL: ACP page content
+=====================================
+*/
+
+#acppage {
+    border: 1px solid #729CBF;
+    background-color: #F6FAFF;
+    padding: 6px;
+    font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+}
+
+#acppage a {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0px;
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 8px;
+    color: #3C608A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.groupbox {
+    background-color: #6593C0;
+    border-bottom: 1px solid #4C73A0;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    color: #FFF;
+    font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+.subbox {
+    background-color: #94C0E8;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    color: #3E5F84;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+.option1 {
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFF;
+    background-color: #E5EFFD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #5A79A0;
+}
+
+.option1-mini {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    background-color: #E5EFFD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #5A79A0;
+}
+
+.option2 {
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFF;
+    background-color: #D5E7FD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #5A79A0;
+}
+
+.option2-mini {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    background-color: #D5E7FD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #5A79A0;
+}
+
+.formtail {
+    text-align: center;
+    background-color: #9ECAE9;
+    border-top: 1px solid #5881A6;
+    padding: 3px;
+}
+
+.infopop {
+    margin-bottom: 1px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 8px;
+    background: #EEF5FD url(../../images/default/infopop_bkg.gif) repeat-x;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #5A79A0;
+    border-bottom: 3px solid #9ECAE9;
+}
+
+.infopop img {
+    margin-bottom: -1px;
+    margin-right: 4px;
+}
+
+.infopop a {
+    color: #5783B9;
+    text-decoration: none;
+}
+
+.infopop a:hover {
+    color: #99B4D9;
+    text-decoration: none;
+}
+
+.linkpop {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px dotted #5783B9;
+}
+
+/*
+Wildcard? Not!
+*/
+
+#info1 div, #info2 div, #info3 div, #info4 div, #info5 div,
+#info6 div, #info7 div, #info8 div, #info9 div, #info10 div,
+#info11 div, #info12 div, #info13 div, #info14 div, #info15 div,
+#info16 div, #info17 div, #info18 div, #info19 div, #info20 div,
+#info21 div, #info22 div, #info23 div, #info24 div, #info25 div,
+#info26 div, #info27 div, #info28 div, #info29 div, #info30 div {
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #444;
+    padding: 8px 8px 4px 4px;
+    line-height: 18px;
+}
+
+.plink {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #CCC;
+    background: #EEE;
+}
+
+.plink a {
+    color: #7B7B7B;
+}
+
+.plinkc {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #CCC;
+    background: #EEE;
+}
+
+/*
+=====================================
+GLOBAL: Form styles
+=====================================
+*/
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+INPUT, TEXTAREA, SELECT {
+    border: 1px solid #8BADC9;
+    padding: 2px;
+    background: #FFF url(../../images/default/input_bkg.gif) no-repeat;
+}
+
+INPUT, TEXTAREA, SELECT, OPTION {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #2C2C2C;
+    background-color: #FFF;
+}
+
+INPUT.button {
+    margin: 1px;
+    padding: 2px 6px 2px 6px;
+    border: 1px solid #5F88AB;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3E6592;
+}
+
+/*
+=====================================
+GLOBAL: Alert messages
+=====================================
+*/
+
+.alert {
+    background-color: #F6F0CA;
+    border: 1px dashed #8D7330;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    color: #815E38;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.critical {
+    background-color: #EED4D2;
+    border: 1px dashed #A94637;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    color: #AC241A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/*
+=====================================
+GLOBAL: Copyright bar
+=====================================
+*/
+
+#powerbar {
+    height: 12px;
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    border: 1px solid #7A9DC6;
+    background-image: url(../../images/default/powerbar_bkg.jpg);
+    background-repeat: repeat-x;
+    background-color: #C5DCED;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    font-style: italic;
+    color: #527693;
+}
+
+#powerbar a {
+    color: #555;
+    text-decoration: none;
+}
+
+#close {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(../../images/default/end_cap_bkg.gif);
+    background-repeat: repeat-x;
+    height: 9px;
+}
+
+#close .lefty {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(../../images/default/end_cap_left.jpg);
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 9px;
+}
+
+#close .righty {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(../../images/default/end_cap_right.jpg);
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 9px;
+}
+
+.end {
+    clear: both;
+}

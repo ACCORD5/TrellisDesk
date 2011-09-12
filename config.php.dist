@@ -1,0 +1,11 @@
+<?php
+
+$config['pass_key'] = 'your unique password key phrase goes here';
+$config['cookie_key'] = 'your unique cookie key phrase goes here';
+$config['session_key'] = 'your unique session key phrase goes here';
+$config['rss_key'] = 'your unique rss key phrase goes here';
+$config['flatfile_key'] = '';
+
+$config['debug_level'] = 0;
+
+?>

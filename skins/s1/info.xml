@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+    <name>Trellis Desk Tiburon</name>
+    <description>This is the default skin for the Trellis Desk client-side frontend, created by ACCORD5.</description>
+    <version>10000</version>
+    <version_human>1.0</version_human>
+    <author>Aaron Draczynski</author>
+    <copyright>2010 ACCORD5</copyright>
+    <td_version_min>1000000</td_version_min>
+    <td_version_min_human>Versions 1.0 RC1 and up</td_version_min_human>
+</skin>

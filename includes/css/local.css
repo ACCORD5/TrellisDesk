@@ -1,0 +1,298 @@
+@charset "UTF-8";
+/*
+=====================================
+ACCORD5 Administration Control Panel
+Local stylesheet
+v1.1.1, created Wed Jun 27 2007
+Unauthorized use & reproduction prohibited
+=====================================
+(C) 2007 Aaron Draczynski
+ACCORD5
+http://www.accord5.com
+=====================================
+TIME SPENT DEVELOPING STYLE SHEET:
+Many painful hours!
+=====================================
+*/
+
+/*
+=====================================
+LOCAL: Page-specific styles
+=====================================
+*/
+
+a {
+    color: #5A79A0;
+}
+
+.current a {
+    color: #FFC341 !important;
+}
+
+.pip {
+    vertical-align: middle;
+    padding-bottom: 2px;
+}
+
+.notpad {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+table th {
+    background-color: #94C0E8;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    color: #3E5F84;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+table th a {
+    color: #3E5F84;
+}
+
+.groupbox a {
+    color: #FFF;
+}
+
+.radio {
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+    margin-top: -4px;
+    border: 0;
+}
+
+.desc {
+    font-weight: normal;
+}
+
+.formtail {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #49688F;
+}
+
+.formtail a {
+    color: #49688F;
+}
+
+.row1,
+.row1_button {
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFF;
+    background-color: #E5EFFD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #5A79A0;
+}
+
+.row1-med,
+.row1-med_button {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #FFF;
+    background-color: #E5EFFD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #5A79A0;
+}
+
+.row1-mini,
+.row1-mini_button {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    background-color: #E5EFFD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #5A79A0;
+}
+
+.row1_button,
+.row1-med_button,
+.row1-mini_button {
+    padding: 8px 4px 8px 2px;
+}
+
+.row2,
+.row2_button {
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFF;
+    background-color: #D5E7FD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #5A79A0;
+}
+
+.row2-med,
+.row2-med_button {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #FFF;
+    background-color: #D5E7FD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #5A79A0;
+}
+
+.row2-mini,
+.row2-mini_button {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    background-color: #D5E7FD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #5A79A0;
+}
+
+.row2_button,
+.row2-med_button,
+.row2-mini_button {
+    padding: 8px 4px 8px 2px;
+}
+
+.option1-med,
+.option1-med_button {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #FFF;
+    background-color: #E5EFFD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #5A79A0;
+}
+
+.option2-med,
+.option2-med_button {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #FFF;
+    background-color: #D5E7FD;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #5A79A0;
+}
+
+.option1-med_button,
+.option2-med_button {
+    padding: 8px 4px 8px 2px;
+}
+
+.menucat {
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+}
+
+label,
+.fake_link {
+    cursor: pointer;
+}
+
+.fake_button {
+    background: #FFF url(../../images/default/input_bkg.gif) no-repeat;
+    margin: 1px;
+    padding: 3px 9px 3px 9px;
+    border: 1px solid #5F88AB;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3E6592;
+}
+
+.fb_pad {
+    padding: 4px;
+}
+
+.plinkj {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #CCC;
+    background: #EAEAEA;
+}
+
+.plinkj a {
+    color: #7B7B7B;
+}
+
+.fakedropdown {
+    margin: 2px 0;
+    padding: 1px 3px;
+    background: #daebf5;
+    color: #175174;
+    border: 1px solid #85a9bf;
+    font-size: 12px;
+}
+
+.fakedropdown div {
+    margin: 3px 0;
+    cursor: pointer;
+}
+
+.fakedropdown a {
+    text-decoration: none;
+    color: #166397;
+}
+
+.subboxstaff,
+.subboxsecret {
+    background-color: #B8D97F;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    color: #49701B;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+.subboxsecret {
+    background-color: #F29283;
+    color: #8F3A26;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.small {
+    font-size: 12px;
+    font-weight: normal;
+}

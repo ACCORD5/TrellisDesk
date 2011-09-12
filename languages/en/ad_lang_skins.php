@@ -1,0 +1,82 @@
+<?php
+
+/*
+#======================================================
+|    | Trellis Desk Skin File
+|    | ad_lang_skins.php
+#======================================================
+*/
+
+$lang = array(
+
+'alert_skin_updated' => 'The skin has been successfully updated.',
+'alert_skin_imported' => 'The skin has been successfully imported.',
+'alert_skin_default' => 'The skin has been successfully set as default.',
+'error_skin_deleted' => 'The skin has been successfully deleted.',
+'alert_tool_action' => 'The action has been successfully executed.',
+'button_edit_file' => 'Edit Template File',
+'button_edit_css' => 'Edit CSS File',
+'button_edit_wrapper' => 'Edit Wrapper',
+'button_edit_properties' => 'Edit Skin Properties',
+'editing_file' => 'Editing Template File:',
+'editing_css' => 'Editing CSS File:',
+'editing_wrapper' => 'Editing Wrapper',
+'editing_properties' => 'Editing Skin Properties:',
+'error_no_name' => 'Please enter a name.',
+'error_writeable' => 'Cannot write to file:',
+'files_list' => 'Skins Files List',
+'preview' => 'Preview',
+'information' => 'Information',
+'options' => 'Options',
+'skins_list' => 'Skins List',
+'lv_no_name' => 'Please enter a name',
+'menu_back' => '<strong>Back</strong> to skins list',
+'menu_cache' => '<strong>Rebuild</strong> skins cache',
+'menu_export' => '<strong>Export</strong> an exisiting skin',
+'menu_import' => '<strong>Import</strong> a new skin',
+'menu_skins_options' => 'Skins Options',
+'menu_settings' => 'Look &amp; Feel <strong>settings</strong>',
+'menu_tools' => 'Access skins <strong>tools</strong>',
+'properties' => 'Properties',
+'select_file_instructions' => 'Select a skin template to edit below.',
+'select_css_instructions' => 'Select a css file to edit below.',
+'users' => 'Users',
+'button_execute' => 'Execute',
+'skin_tools' => 'Skin Tools',
+'switch_all' => 'Switch all users to',
+'switch_from' => 'Switch users from',
+'switch_to' => 'to',
+'export_instructions' => 'Please select a skin to export.',
+'import_skin' => 'Import Skin',
+'import_instructions' => 'Please select a valid Trellis Desk skin pack XML file to upload.',
+'button_import' => 'Import',
+'error_no_file' => 'Please select a file to upload.',
+'error_import' => 'Error processing file.',
+'switch_current' => 'Switch current users to',
+'deleting_skin' => 'Deleting skin:',
+'button_delete_skin' => 'Delete Skin',
+'error_delete_default' => 'Sorry, the default skin cannot be deleted.',
+'error_delete' => 'Error deleting skin.',
+'help_about_skins_title' => 'About Skins',
+'help_about_skins_msg' => 'Skins are a way to personalize the appearance of your helpdesk. Applying a new skin to Trellis Desk will change the style, colors, buttons, and controls presented to your helpdesk users. You can import skins that other people have shared, or you can create graphics and write code to make your own unique skin. For example, you may wish to create your own skin that matches the rest of your organization\'s website.',
+'delete_warning' => 'WARNING: Trellis Desk will attempt to delete the skin folder including any images, css, templates, etc.',
+'button_export' => 'Export',
+'export_options' => 'Export Options',
+'export_css' => 'Export CSS files',
+'export_images' => 'Export images',
+'export_scripts' => 'Export Javascript files',
+'export_other' => 'Export other assets',
+'author' => 'Author',
+'copyright' => 'Copyright',
+'version_num' => 'Version Number',
+'version_human' => 'Version Human',
+'td_version_num' => 'TD Min Version Number',
+'td_version_human' => 'TD Min Version Human',
+'import_css' => 'Import CSS files',
+'import_images' => 'Import images',
+'import_scripts' => 'Import Javascript files',
+'import_other' => 'Import other assets',
+
+);
+
+?>
