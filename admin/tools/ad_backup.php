@@ -17,13 +17,14 @@ class td_ad_backup {
 
     function auto_run()
     {
-        if ( ! $this->trellis->user['acp']['tools_backup'] )
-        {
-            $this->trellis->skin->error('no_perm');
-        }
-        
-        $this->trellis->skin->set_section( 'Tools &amp; Maintenance' );        
-        $this->trellis->skin->set_description( 'Run reports &amp; statistics,  maintenance utilities, recount functions, cleaning utilities, and backup functions.' );
+		$this->trellis->check_perm( 'tools', 'backup' );
+
+        //$this->trellis->load_functions('settings');
+        //$this->trellis->load_lang('settings');
+
+        $this->trellis->skin->set_active_link( 4 );
+//        $this->trellis->skin->set_section( 'Tools &amp; Maintenance' );        
+//        $this->trellis->skin->set_description( 'Run reports &amp; statistics,  maintenance utilities, recount functions, cleaning utilities, and backup functions.' );
 
         switch( $this->trellis->input['code'] )
         {
@@ -66,7 +67,7 @@ class td_ad_backup {
 
         $this->output = "<div class='groupbox'>Full Backup</div>
                         <div class='subbox'>A full backup is a backup of all the files in the Trellis Desk directory, along with a backup of the SQL database.  To perform a full backup backup, simply select your desired options below and then click Backup.</div>
-                        <form action='<! TD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=dofull' method='post'>
+                        <form action='<! TD_URL !>/admin.php?section=tools&amp;page=backup&amp;code=dofull' method='post'>
                         <div class='option1'><label for='td_tables'><input type='checkbox' name='td_tables' id='td_tables' value='1' class='ckbox' checked='checked' /> Backup only Trellis Desk tables</label></div>
                         <div class='option2'><label for='drop_table'><input type='checkbox' name='drop_table' id='drop_table' value='1' class='ckbox' checked='checked' /> Add DROP TABLE IF EXISTS</label></div>
                         <div class='option1'><label for='if_not_exists'><input type='checkbox' name='if_not_exists' id='if_not_exists' value='1' class='ckbox' checked='checked' /> Use CREATE IF NOT EXISTS</label></div>
@@ -78,7 +79,7 @@ class td_ad_backup {
 
         $this->nav = array(
                            "<a href='<! TD_URL !>/admin.php?section=tools'>Tools</a>",
-                           "<a href='<! TD_URL !>/admin.php?section=tools&amp;act=backup'>Backup</a>",
+                           "<a href='<! TD_URL !>/admin.php?section=tools&amp;page=backup'>Backup</a>",
                            "SQL Backup",
                            );
 
@@ -98,7 +99,7 @@ class td_ad_backup {
 
         $this->output = "<div class='groupbox'>SQL Backup</div>
                         <div class='subbox'>To perform an SQL backup, simply select your desired options below and then click Backup.</div>
-                        <form action='<! TD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=dosql' method='post'>
+                        <form action='<! TD_URL !>/admin.php?section=tools&amp;page=backup&amp;code=dosql' method='post'>
                         <div class='option1'><label for='td_tables'><input type='checkbox' name='td_tables' id='td_tables' value='1' class='ckbox' checked='checked' /> Backup only Trellis Desk tables</label></div>
                         <div class='option2'><label for='drop_table'><input type='checkbox' name='drop_table' id='drop_table' value='1' class='ckbox' checked='checked' /> Add DROP TABLE IF EXISTS</label></div>
                         <div class='option1'><label for='if_not_exists'><input type='checkbox' name='if_not_exists' id='if_not_exists' value='1' class='ckbox' checked='checked' /> Use CREATE IF NOT EXISTS</label></div>
@@ -110,7 +111,7 @@ class td_ad_backup {
 
         $this->nav = array(
                            "<a href='<! TD_URL !>/admin.php?section=tools'>Tools</a>",
-                           "<a href='<! TD_URL !>/admin.php?section=tools&amp;act=backup'>Backup</a>",
+                           "<a href='<! TD_URL !>/admin.php?section=tools&amp;page=backup'>Backup</a>",
                            "SQL Backup",
                            );
 
@@ -130,7 +131,7 @@ class td_ad_backup {
 
         $this->output = "<div class='groupbox'>File Backup</div>
                         <div class='subbox'>To perform a file backup, simply click the Backup button below.  This will take all the files and folders in the Trellis Desk directory and zips them.</div>
-                        <form action='<! TD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=dofile' method='post'>
+                        <form action='<! TD_URL !>/admin.php?section=tools&amp;page=backup&amp;code=dofile' method='post'>
                         <div class='formtail'><input type='submit' name='submit' id='submit' value='Backup' class='button' /></div>
                         </form>";
 
@@ -138,7 +139,7 @@ class td_ad_backup {
 
         $this->nav = array(
                            "<a href='<! TD_URL !>/admin.php?section=tools'>Tools</a>",
-                           "<a href='<! TD_URL !>/admin.php?section=tools&amp;act=backup'>Backup</a>",
+                           "<a href='<! TD_URL !>/admin.php?section=tools&amp;page=backup'>Backup</a>",
                            "File Backup",
                            );
 
@@ -155,33 +156,33 @@ class td_ad_backup {
         if ( $this->trellis->input['td_tables'] )
         {
             $tables = array(
-                            DB_PRE .'announcements'        => 1,
-                            DB_PRE .'articles'            => 1,
-                            DB_PRE .'article_rate'        => 1,
-                            DB_PRE .'asessions'            => 1,
-                            DB_PRE .'attachments'        => 1,
-                            DB_PRE .'canned'            => 1,
-                            DB_PRE .'categories'        => 1,
-                            DB_PRE .'comments'            => 1,
-                            DB_PRE .'departments'        => 1,
-                            DB_PRE .'depart_fields'        => 1,
-                            DB_PRE .'groups'            => 1,
-                            DB_PRE .'languages'            => 1,
-                            DB_PRE .'logs'                => 1,
-                            DB_PRE .'users'            => 1,
-                            DB_PRE .'news_comments'        => 1,
-                            DB_PRE .'pages'                => 1,
-                            DB_PRE .'profile_fields'    => 1,
-                            DB_PRE .'replies'            => 1,
-                            DB_PRE .'reply_rate'        => 1,
-                            DB_PRE .'sessions'            => 1,
-                            DB_PRE .'settings'            => 1,
-                            DB_PRE .'settings_groups'    => 1,
-                            DB_PRE .'skins'                => 1,
-                            DB_PRE .'tickets'            => 1,
-                            DB_PRE .'tokens'            => 1,
-                            DB_PRE .'upg_history'        => 1,
-                            DB_PRE .'validation'        => 1,
+                            //TDDB_PRE .'announcements'        => 1,
+                            TDDB_PRE .'articles'            => 1,
+                            TDDB_PRE .'article_rate'        => 1,
+                            TDDB_PRE .'asessions'            => 1,
+                            TDDB_PRE .'attachments'        => 1,
+                            //TDDB_PRE .'canned'            => 1,
+                            TDDB_PRE .'categories'        => 1,
+                            TDDB_PRE .'comments'            => 1,
+                            TDDB_PRE .'departments'        => 1,
+                            TDDB_PRE .'depart_fields'        => 1,
+                            TDDB_PRE .'groups'            => 1,
+                            TDDB_PRE .'languages'            => 1,
+                            TDDB_PRE .'logs'                => 1,
+                            TDDB_PRE .'users'            => 1,
+                            TDDB_PRE .'news_comments'        => 1,
+                            TDDB_PRE .'pages'                => 1,
+                            TDDB_PRE .'profile_fields'    => 1,
+                            TDDB_PRE .'replies'            => 1,
+                            TDDB_PRE .'reply_rate'        => 1,
+                            TDDB_PRE .'sessions'            => 1,
+                            TDDB_PRE .'settings'            => 1,
+                            TDDB_PRE .'settings_groups'    => 1,
+                            TDDB_PRE .'skins'                => 1,
+                            TDDB_PRE .'tickets'            => 1,
+                            //TDDB_PRE .'tokens'            => 1,
+                            TDDB_PRE .'upg_history'        => 1,
+                            TDDB_PRE .'validation'        => 1,
                             );
         }
 
@@ -212,7 +213,7 @@ class td_ad_backup {
             $sql_data = $backup;
         }
 
-        require_once TD_INC .'class_zip.php';
+        require_once TD_INC .'classes/class_zip.php';
 
         $this->zip = new zipfile();
 
@@ -250,37 +251,37 @@ class td_ad_backup {
         if ( $this->trellis->input['td_tables'] )
         {
             $tables = array(
-                            DB_PRE .'announcements'        => 1,
-                            DB_PRE .'articles'            => 1,
-                            DB_PRE .'article_rate'        => 1,
-                            DB_PRE .'asessions'            => 1,
-                            DB_PRE .'attachments'        => 1,
-                            DB_PRE .'canned'            => 1,
-                            DB_PRE .'categories'        => 1,
-                            DB_PRE .'comments'            => 1,
-                            DB_PRE .'departments'        => 1,
-                            DB_PRE .'depart_fields'        => 1,
-                            DB_PRE .'groups'            => 1,
-                            DB_PRE .'languages'            => 1,
-                            DB_PRE .'logs'                => 1,
-                            DB_PRE .'users'            => 1,
-                            DB_PRE .'news_comments'        => 1,
-                            DB_PRE .'pages'                => 1,
-                            DB_PRE .'profile_fields'    => 1,
-                            DB_PRE .'replies'            => 1,
-                            DB_PRE .'reply_rate'        => 1,
-                            DB_PRE .'sessions'            => 1,
-                            DB_PRE .'settings'            => 1,
-                            DB_PRE .'settings_groups'    => 1,
-                            DB_PRE .'skins'                => 1,
-                            DB_PRE .'tickets'            => 1,
-                            DB_PRE .'tokens'            => 1,
-                            DB_PRE .'upg_history'        => 1,
-                            DB_PRE .'validation'        => 1,
+                            //TDDB_PRE .'announcements'        => 1,
+                            TDDB_PRE .'articles'            => 1,
+                            TDDB_PRE .'article_rate'        => 1,
+                            TDDB_PRE .'asessions'            => 1,
+                            TDDB_PRE .'attachments'        => 1,
+                            //TDDB_PRE .'canned'            => 1,
+                            TDDB_PRE .'categories'        => 1,
+                            TDDB_PRE .'comments'            => 1,
+                            TDDB_PRE .'departments'        => 1,
+                            TDDB_PRE .'depart_fields'        => 1,
+                            TDDB_PRE .'groups'            => 1,
+                            TDDB_PRE .'languages'            => 1,
+                            TDDB_PRE .'logs'                => 1,
+                            TDDB_PRE .'users'            => 1,
+                            TDDB_PRE .'news_comments'        => 1,
+                            TDDB_PRE .'pages'                => 1,
+                            TDDB_PRE .'profile_fields'    => 1,
+                            TDDB_PRE .'replies'            => 1,
+                            TDDB_PRE .'reply_rate'        => 1,
+                            TDDB_PRE .'sessions'            => 1,
+                            TDDB_PRE .'settings'            => 1,
+                            TDDB_PRE .'settings_groups'    => 1,
+                            TDDB_PRE .'skins'                => 1,
+                            TDDB_PRE .'tickets'            => 1,
+                            //TDDB_PRE .'tokens'            => 1,
+                            TDDB_PRE .'upg_history'        => 1,
+                            TDDB_PRE .'validation'        => 1,
                             );
         }
 
-        $backup = $this->trellis->db->get_backup( $tables, $this->trellis->input['drop_table'], $this->trellis->input['if_not_exists'] );
+        $backup = $this->trellis->mysql->get_backup( $tables, $this->trellis->input['drop_table'], $this->trellis->input['if_not_exists'] );
 
         if ( $this->trellis->input['gzip'] )
         {
@@ -309,7 +310,7 @@ class td_ad_backup {
 
     function do_file()
     {
-        require_once TD_INC .'class_zip.php';
+        require_once TD_INC .'classes/class_zip.php';
 
         $this->zip = new zipfile();
 
