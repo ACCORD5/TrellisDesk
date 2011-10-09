@@ -5,6 +5,8 @@ $config['cookie_key'] = 'your unique cookie key phrase goes here';
 $config['session_key'] = 'your unique session key phrase goes here';
 $config['rss_key'] = 'your unique rss key phrase goes here';
 $config['flatfile_key'] = '';
+$data_path=getcwd();
+$config['data_path'] = $data_path.'/data/';
 
 $config['debug_level'] = 0;
 
