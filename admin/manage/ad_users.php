@@ -1015,6 +1015,7 @@ class td_ad_users {
 
         $this->trellis->load_functions('cpfields');
 
+        if (!empty($this->trellis->cache->data['pfields'])){
         if( ! $fdata = $this->trellis->func->cpfields->process_input() )
         {
             if ( $this->trellis->func->cpfields->required_field ) $this->add_user( 'no_field', $this->trellis->func->cpfields->required_field );
@@ -1025,6 +1026,10 @@ class td_ad_users {
 
             $this->trellis->func->cpfields->set_data( $fdata, $user_id, 1 );
         }
+		}
+		else {
+		 $user_id = $this->trellis->func->users->add( $db_array, array( 'staff' => $staff, 'bypass_val' => 1 ) );
+		}
 
         $this->trellis->log( array( 'msg' => array( 'user_added', $this->trellis->input['name'] ), 'type' => 'user', 'content_type' => 'user', 'content_id' => $user_id ) );
 
@@ -1175,7 +1180,7 @@ class td_ad_users {
         if ( $this->trellis->check_perm( 'manage', 'users', 'staff', 0 ) ) $db_array['ugroup_sub_acp'] = $this->trellis->input['ugroup_sub_acp'];
 
         $this->trellis->load_functions('cpfields');
-
+		if (!empty($this->trellis->cache->data['pfields'])){
         if( ! $fdata = $this->trellis->func->cpfields->process_input() )
         {
             if ( $this->trellis->func->cpfields->required_field ) $this->edit_user( 'no_field', $this->trellis->func->cpfields->required_field );
@@ -1186,6 +1191,8 @@ class td_ad_users {
 
             $this->trellis->func->cpfields->set_data( $fdata, $u['id'] );
         }
+		}
+		else {$this->trellis->func->users->edit( $db_array, $u['id'], array( 'staff' => $staff ) );}
 
         $this->trellis->log( array( 'msg' => array( 'user_edited', $this->trellis->input['name'] ), 'type' => 'user', 'content_type' => 'user', 'content_id' => $u['id'] ) );
 
