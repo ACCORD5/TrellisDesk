@@ -1,6 +1,6 @@
 # Max OS X
 .DS_Store
-Icon?
+
 
 # Windows
 Thumbs.db
@@ -48,3 +48,29 @@ error_log
 *.bak
 *.swp
 *~.nib
+
+# Trellis Desk
+/config.php
+/data/*
+!/data/cache
+/data/cache/*
+!/data/cache/index.html
+!/data/cache/htmlpurifier
+!/data/cache/trellis
+/data/cache/htmlpurifier/*
+!/data/cache/htmlpurifier/index.html
+/data/cache/trellis/*
+!/data/cache/trellis/index.html
+!/data/logs
+/data/logs/*
+!/data/logs/index.html
+!/data/skin_compile
+/data/skin_compile/*
+!/data/skin_compile/index.html
+!/data/temp
+/data/temp/*
+!/data/temp/index.html
+!/data/uploads
+/data/uploads/*
+!/data/uploads/index.html
+/install/install.lock
