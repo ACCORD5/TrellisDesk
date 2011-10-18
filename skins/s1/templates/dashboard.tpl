@@ -2,10 +2,10 @@
     <table width="100%" cellpadding="0" cellspacing="0">
     <tr>
         <td width="1%" style="padding:0 8px 7px 8px">
-            <a href="{$td_url}/index.php?page=tickets&amp;act=open"><img src="{$img_url}/ticket_icon.gif" alt="{$lang['open_ticket']}" /></a>
+            <a href="{$td_url}/index.php?page=tickets&amp;act=add"><img src="{$img_url}/ticket_icon.gif" alt="{$lang['open_ticket']}" /></a>
         </td>
         <td width="46%">
-            <span class="blbig"><a href="{$td_url}/index.php?page=tickets&amp;act=open">{$lang['open_ticket']}</a></span>
+            <span class="blbig"><a href="{$td_url}/index.php?page=tickets&amp;act=add">{$lang['open_ticket']}</a></span>
         </td>
         {if $cache['settings']['kb']['enable'] && $user['g_kb_access']}
         <td width="1%" style="padding:0 8px 7px 8px">

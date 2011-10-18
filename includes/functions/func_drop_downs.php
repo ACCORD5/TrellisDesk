@@ -365,7 +365,7 @@ class td_func_drop_downs {
 
         foreach ( $params['options'] as $key => $value )
         {
-            if ( $params['exclude'] == $key ) continue;
+             if ( isset($params['exclude']) && $params['exclude'] == $key ) continue;
 
             $html .= '<option value="'. $key .'"';
 
