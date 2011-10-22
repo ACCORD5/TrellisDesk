@@ -1242,7 +1242,7 @@ class td_install {
             # Run SQL Queries
             #=============================
 
-            $upload_path = $path ."/data/uploads";
+            $upload_path = $path ."/data/uploads/";
 
             $pwsalt = '';
             $rksalt = '';

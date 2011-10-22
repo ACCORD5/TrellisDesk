@@ -106,7 +106,7 @@ class td_func_attachments {
         if ( ! @move_uploaded_file( $file['tmp_name'], $upload_location ) ) $this->trellis->skin->ajax_output( json_encode( array( 'error' => true, 'errormsg' => $this->trellis->lang['error_upload_move'] ) ) );
 
         # TODO: only run chmod if web user is 'nobody' (just have a setting)
-        @chmod( $upload_location, 0666 );
+        //@chmod( $upload_location, 0666 );
 
         $data['uid'] = $this->trellis->user['id'];
         $data['real_name'] = $file_name;
