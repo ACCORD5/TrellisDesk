@@ -91,7 +91,7 @@ class td_func_attachments {
 
         $allowed_exts = array_map( create_function( '$a', 'return \'.\'. trim( $a );' ), explode( ',', $this->trellis->user['g_upload_exts'] ) );
 
-        $file_ext = strrchr( $file['name'], "." );
+        $file_ext = strtolower(strrchr( $file['name'], "." ));
 
         if ( ! in_array( $file_ext, $allowed_exts ) )
         {
