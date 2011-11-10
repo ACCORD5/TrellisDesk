@@ -1730,7 +1730,7 @@ class td_func_tickets {
 
             if ( empty( $perms ) ) $perms[] = 0;
 
-            $sql_where = array( array( array( 't' => 'did' ), 'in', $perms ), array( array( 'a' => 'uid' ), '=', $this->trellis->user['id'], 'or' ) );
+            $sql_where = array( array( array( 't' => 'did' ), 'in', $perms ), array( array( 't' => 'uid' ), '=', $this->trellis->user['id'], 'or' ) );
         }
 
         $tickets = $this->trellis->db->get( array(
