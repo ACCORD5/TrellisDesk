@@ -188,7 +188,7 @@ class td_ad_cdfields {
                         <div id='opts_textarea' style='display:none'>{lang.columns} ". $this->trellis->skin->textfield( 'opts_cols', '', '', 0, 4 ) ."&nbsp;&nbsp;{lang.rows} ". $this->trellis->skin->textfield( 'opts_rows', '', '', 0, 4 ) ."</div>
                         <div id='opts_dcr' style='display:none'>
                             <input type='hidden' name='opts_num' id='opts_num' value='1' />
-                            <div id='opts_dcr_1'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_1' value='' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_1' value='' size='28' /> <img src='<! IMG_DIR !>/icon_circle_plus.png' alt='+' style='vertical-align:middle;cursor:pointer' onclick='addDCRopt()' /></div>
+                            <div id='opts_dcr_1'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_1' value='' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_1' value='' size='28' /> <img src='<! IMG_DIR !>/icons/circle_plus.png' alt='+' style='vertical-align:middle;cursor:pointer' onclick='addDCRopt()' /></div>
                         </div>";
 
         $depart_perms_html = "<table width='100%' cellpadding='0' cellspacing='0'>";
@@ -241,7 +241,7 @@ class td_ad_cdfields {
                             var next_opt = parseInt( $('#opts_num').val() ) + 1;
                             $('#opts_num').val(next_opt);
 
-                            $('#opts_dcr').append(\"<div id='opts_dcr_\"+ next_opt +\"' style='padding-top:4px;display:none'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_\"+ next_opt +\"' value='' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_\"+ next_opt +\"' value='' size='28' /> <img src='<! IMG_DIR !>/icon_minus_circle.png' alt='-' style='vertical-align:middle;cursor:pointer' onclick='removeDCRopt(\"+ next_opt +\")' />\");
+                            $('#opts_dcr').append(\"<div id='opts_dcr_\"+ next_opt +\"' style='padding-top:4px;display:none'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_\"+ next_opt +\"' value='' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_\"+ next_opt +\"' value='' size='28' /> <img src='<! IMG_DIR !>/icons/minus_circle.png' alt='-' style='vertical-align:middle;cursor:pointer' onclick='removeDCRopt(\"+ next_opt +\")' />\");
 
                             $('#opts_dcr_'+ next_opt).show('blind');
                         }
@@ -345,7 +345,7 @@ class td_ad_cdfields {
                 }
                 else
                 {
-                    $opts_rows_html .= "<div id='opts_dcr_{$opts_count}'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_{$opts_count}' value='{$key}' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_{$opts_count}' value='{$name}' size='28' /> <img src='<! IMG_DIR !>/icon_minus_circle.png' alt='-' style='vertical-align:middle;cursor:pointer' onclick='removeDCRopt({$opts_count})' /></div>";
+                    $opts_rows_html .= "<div id='opts_dcr_{$opts_count}'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_{$opts_count}' value='{$key}' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_{$opts_count}' value='{$name}' size='28' /> <img src='<! IMG_DIR !>/icons/minus_circle.png' alt='-' style='vertical-align:middle;cursor:pointer' onclick='removeDCRopt({$opts_count})' /></div>";
                 }
             }
         }
@@ -354,7 +354,7 @@ class td_ad_cdfields {
                         <div id='opts_textarea' style='{$opts_show_textarea}'>{lang.columns} ". $this->trellis->skin->textfield( 'opts_cols', $opts_cols, '', 0, 4 ) ."&nbsp;&nbsp;{lang.rows} ". $this->trellis->skin->textfield( 'opts_rows', $opts_rows, '', 0, 4 ) ."</div>
                         <div id='opts_dcr' style='{$opts_show_dcr}'>
                             <input type='hidden' name='opts_num' id='opts_num' value='{$opts_count}' />
-                            <div id='opts_dcr_1'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_1' value='{$opts_key_1}' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_1' value='{$opts_name_1}' size='28' /> <img src='<! IMG_DIR !>/icon_circle_plus.png' alt='+' style='vertical-align:middle;cursor:pointer' onclick='addDCRopt()' /></div>
+                            <div id='opts_dcr_1'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_1' value='{$opts_key_1}' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_1' value='{$opts_name_1}' size='28' /> <img src='<! IMG_DIR !>/icons/circle_plus.png' alt='+' style='vertical-align:middle;cursor:pointer' onclick='addDCRopt()' /></div>
                             {$opts_rows_html}
                         </div>";
 
@@ -410,7 +410,7 @@ class td_ad_cdfields {
                             var next_opt = parseInt( $('#opts_num').val() ) + 1;
                             $('#opts_num').val(next_opt);
 
-                            $('#opts_dcr').append(\"<div id='opts_dcr_\"+ next_opt +\"' style='padding-top:4px;display:none'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_\"+ next_opt +\"' value='' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_\"+ next_opt +\"' value='' size='28' /> <img src='<! IMG_DIR !>/icon_minus_circle.png' alt='-' style='vertical-align:middle;cursor:pointer' onclick='removeDCRopt(\"+ next_opt +\")' />\");
+                            $('#opts_dcr').append(\"<div id='opts_dcr_\"+ next_opt +\"' style='padding-top:4px;display:none'>{lang.key} <input type='text' name='opts_dcr_keys[]' id='opts_dcr_keys_\"+ next_opt +\"' value='' size='8' />&nbsp;&nbsp;{lang.name} <input type='text' name='opts_dcr_names[]' id='opts_dcr_names_\"+ next_opt +\"' value='' size='28' /> <img src='<! IMG_DIR !>/icons/minus_circle.png' alt='-' style='vertical-align:middle;cursor:pointer' onclick='removeDCRopt(\"+ next_opt +\")' />\");
 
                             $('#opts_dcr_'+ next_opt).show('blind');
                         }
