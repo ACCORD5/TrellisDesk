@@ -206,7 +206,7 @@ class td_install {
         $checks_html = "<table width='100%' cellpadding='0' cellspacing='0'>";
 
         $checks_html .= $this->check_row_start( 'PHP Version ('. PHP_VERSION .')' );
-        $checks_html .= $this->check_row_end( version_compare( PHP_VERSION, '5.2', '>=' ), array( 'fail_msg' => 'Trellis Desk cannot be installed as it requires PHP version <b>5.2.0</b> or later.' ) );
+        $checks_html .= $this->check_row_end( version_compare( PHP_VERSION, '5.3', '>=' ), array( 'fail_msg' => 'Trellis Desk cannot be installed as it requires PHP version <b>5.3.0</b> or later.' ) );
 
         $checks_html .= $this->check_row_start( 'Safe Mode' );
         $checks_html .= $this->check_row_end( ( ! ini_get('safe_mode') ), array( 'warn_msg' => 'Safe mode in PHP is enabled. You can continue, however this may result in unexpected behavior from Trellis Desk.' ) );
