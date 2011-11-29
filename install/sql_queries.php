@@ -7,7 +7,7 @@
  * @license    GNU General Public License version 3 or later; see LICENSE.txt
  */
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_articles` (
+$SQL[] = "CREATE TABLE `".$db_prefix."articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cid` int(11) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
@@ -28,7 +28,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_articles` (
   FULLTEXT KEY `full_index` (`title`,`description`,`content`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_article_comments` (
+$SQL[] = "CREATE TABLE `".$db_prefix."article_comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `aid` int(11) NOT NULL DEFAULT '0',
   `uid` int(11) NOT NULL DEFAULT '0',
@@ -40,7 +40,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_article_comments` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_article_rate` (
+$SQL[] = "CREATE TABLE `".$db_prefix."article_rate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `aid` int(11) NOT NULL DEFAULT '0',
   `uid` int(11) NOT NULL DEFAULT '0',
@@ -50,7 +50,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_article_rate` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_asessions` (
+$SQL[] = "CREATE TABLE `".$db_prefix."asessions` (
   `s_id` varchar(40) NOT NULL,
   `s_uid` int(11) NOT NULL DEFAULT '0',
   `s_uname` varchar(255) NOT NULL,
@@ -62,14 +62,14 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_asessions` (
   PRIMARY KEY (`s_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_assign_map` (
+$SQL[] = "CREATE TABLE `".$db_prefix."assign_map` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL DEFAULT '0',
   `uid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_attachments` (
+$SQL[] = "CREATE TABLE `".$db_prefix."attachments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content_type` varchar(20) NOT NULL,
   `content_id` int(11) NOT NULL DEFAULT '0',
@@ -84,7 +84,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_attachments` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_categories` (
+$SQL[] = "CREATE TABLE `".$db_prefix."categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL,
@@ -96,7 +96,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_departments` (
+$SQL[] = "CREATE TABLE `".$db_prefix."departments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
@@ -121,7 +121,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_departments` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_depart_fields` (
+$SQL[] = "CREATE TABLE `".$db_prefix."depart_fields` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `type` varchar(25) NOT NULL,
@@ -132,7 +132,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_depart_fields` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_depart_fields_data` (
+$SQL[] = "CREATE TABLE `".$db_prefix."depart_fields_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fid` int(11) NOT NULL DEFAULT '0',
   `tid` int(11) NOT NULL DEFAULT '0',
@@ -142,7 +142,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_depart_fields_data` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_flags` (
+$SQL[] = "CREATE TABLE `".$db_prefix."flags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `icon` varchar(255) NOT NULL,
@@ -150,14 +150,14 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_flags` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_flags_map` (
+$SQL[] = "CREATE TABLE `".$db_prefix."flags_map` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL DEFAULT '0',
   `fid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_groups` (
+$SQL[] = "CREATE TABLE `".$db_prefix."groups` (
   `g_id` int(11) NOT NULL AUTO_INCREMENT,
   `g_name` varchar(255) NOT NULL,
   `g_ticket_access` tinyint(1) NOT NULL DEFAULT '0',
@@ -197,7 +197,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_groups` (
   PRIMARY KEY (`g_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_languages` (
+$SQL[] = "CREATE TABLE `".$db_prefix."languages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(5) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -206,7 +206,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_languages` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_logs` (
+$SQL[] = "CREATE TABLE `".$db_prefix."logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL DEFAULT '0',
   `action` text NOT NULL,
@@ -221,7 +221,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_logs` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_news` (
+$SQL[] = "CREATE TABLE `".$db_prefix."news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
@@ -236,7 +236,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_news` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_news_comments` (
+$SQL[] = "CREATE TABLE `".$db_prefix."news_comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nid` int(11) NOT NULL DEFAULT '0',
   `uid` int(11) NOT NULL DEFAULT '0',
@@ -248,7 +248,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_news_comments` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_pages` (
+$SQL[] = "CREATE TABLE `".$db_prefix."pages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
@@ -258,7 +258,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_pages` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_priorities` (
+$SQL[] = "CREATE TABLE `".$db_prefix."priorities` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `icon_regular` varchar(255) NOT NULL,
@@ -268,7 +268,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_priorities` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_profile_fields` (
+$SQL[] = "CREATE TABLE `".$db_prefix."profile_fields` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `type` varchar(25) NOT NULL,
@@ -281,7 +281,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_profile_fields` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_profile_fields_data` (
+$SQL[] = "CREATE TABLE `".$db_prefix."profile_fields_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fid` int(11) NOT NULL DEFAULT '0',
   `uid` int(11) NOT NULL DEFAULT '0',
@@ -290,7 +290,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_profile_fields_data` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_replies` (
+$SQL[] = "CREATE TABLE `".$db_prefix."replies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL DEFAULT '0',
   `uid` int(11) NOT NULL DEFAULT '0',
@@ -304,7 +304,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_replies` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_reply_rate` (
+$SQL[] = "CREATE TABLE `".$db_prefix."reply_rate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL DEFAULT '0',
   `rid` int(11) NOT NULL DEFAULT '0',
@@ -315,7 +315,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_reply_rate` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_reply_templates` (
+$SQL[] = "CREATE TABLE `".$db_prefix."reply_templates` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
@@ -325,7 +325,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_reply_templates` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_sessions` (
+$SQL[] = "CREATE TABLE `".$db_prefix."sessions` (
   `s_id` varchar(40) NOT NULL,
   `s_uid` int(11) NOT NULL DEFAULT '0',
   `s_uname` varchar(255) NOT NULL,
@@ -338,7 +338,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_sessions` (
   PRIMARY KEY (`s_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_settings` (
+$SQL[] = "CREATE TABLE `".$db_prefix."settings` (
   `cf_id` int(11) NOT NULL AUTO_INCREMENT,
   `cf_key` varchar(255) NOT NULL,
   `cf_group` varchar(255) NOT NULL,
@@ -353,7 +353,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_settings` (
   PRIMARY KEY (`cf_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_settings_groups` (
+$SQL[] = "CREATE TABLE `".$db_prefix."settings_groups` (
   `cg_id` int(11) NOT NULL AUTO_INCREMENT,
   `cg_key` varchar(255) NOT NULL,
   `cg_set_count` int(11) NOT NULL DEFAULT '0',
@@ -361,7 +361,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_settings_groups` (
   PRIMARY KEY (`cg_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_skins` (
+$SQL[] = "CREATE TABLE `".$db_prefix."skins` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `default` tinyint(1) NOT NULL DEFAULT '0',
@@ -369,7 +369,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_skins` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_statuses` (
+$SQL[] = "CREATE TABLE `".$db_prefix."statuses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name_staff` varchar(255) NOT NULL,
   `name_user` varchar(255) NOT NULL,
@@ -381,7 +381,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_statuses` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_tickets` (
+$SQL[] = "CREATE TABLE `".$db_prefix."tickets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `mask` varchar(255) NOT NULL,
   `did` int(11) NOT NULL DEFAULT '0',
@@ -415,7 +415,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_tickets` (
   KEY `mask` (`mask`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_tickets_guests` (
+$SQL[] = "CREATE TABLE `".$db_prefix."tickets_guests` (
   `id` int(11) NOT NULL DEFAULT '0',
   `gname` varchar(255) NOT NULL,
   `key` varchar(10) NOT NULL,
@@ -424,14 +424,14 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_tickets_guests` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_tickets_track` (
+$SQL[] = "CREATE TABLE `".$db_prefix."tickets_track` (
   `tid` int(11) NOT NULL DEFAULT '0',
   `uid` int(11) NOT NULL DEFAULT '0',
   `date` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`tid`,`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_upg_history` (
+$SQL[] = "CREATE TABLE `".$db_prefix."upg_history` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `verid` int(11) NOT NULL DEFAULT '0',
   `verhuman` varchar(255) NOT NULL,
@@ -475,7 +475,7 @@ $SQL[] = "CREATE TABLE `". $db_prefix ."users` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_users_staff` (
+$SQL[] = "CREATE TABLE `".$db_prefix."users_staff` (
   `uid` int(11) NOT NULL DEFAULT '0',
   `email_staff_enable` tinyint(1) NOT NULL DEFAULT '0',
   `email_staff_user_approve` tinyint(1) NOT NULL DEFAULT '0',
@@ -503,7 +503,7 @@ $SQL[] = "CREATE TABLE `".$db_prefix."_users_staff` (
   PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
-$SQL[] = "CREATE TABLE `".$db_prefix."_validation` (
+$SQL[] = "CREATE TABLE `".$db_prefix."validation` (
   `id` varchar(255) NOT NULL,
   `uid` int(11) NOT NULL DEFAULT '0',
   `email` varchar(255) NOT NULL,
