@@ -207,6 +207,7 @@ class td_source_register {
 
         $this->trellis->load_functions('cpfields');
 
+		if (!empty($this->trellis->cache->data['pfields'])){
         if( ! $fdata = $this->trellis->func->cpfields->process_input() )
         {
             if ( $this->trellis->func->cpfields->required_field ) $this->add_user( array( 'error' => 'no_field', 'extra' => $this->trellis->func->cpfields->required_field ) );
@@ -217,6 +218,10 @@ class td_source_register {
 
             $this->trellis->func->cpfields->set_data( $fdata, $user_id, 1 );
         }
+		}
+		else {
+		 $user_id = $this->trellis->func->users->add( $db_array );
+		}
 
         $this->trellis->log( 'user', "User Added &#039;". $this->trellis->input['name'] ."&#039;", 1, $user_id );
 

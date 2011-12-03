@@ -91,7 +91,7 @@ class td_func_attachments {
 
         $allowed_exts = array_map( create_function( '$a', 'return \'.\'. trim( $a );' ), explode( ',', $this->trellis->user['g_upload_exts'] ) );
 
-        $file_ext = strrchr( $file['name'], "." );
+        $file_ext = strtolower(strrchr( $file['name'], "." ));
 
         if ( ! in_array( $file_ext, $allowed_exts ) )
         {
@@ -99,14 +99,14 @@ class td_func_attachments {
         }
 
         $file_name = md5( $file['name'] . microtime() );
-        $upload_location = $this->trellis->cache->data['settings']['general']['upload_dir'] . $file_name;
+        $upload_location = $this->trellis->cache->data['settings']['general']['upload_dir'] . $file_name . $file_ext;
 
         if ( ! is_writeable( $this->trellis->cache->data['settings']['general']['upload_dir'] ) ) $this->trellis->skin->ajax_output( json_encode( array( 'error' => true, 'errormsg' => 'directory' ) ) );
 
         if ( ! @move_uploaded_file( $file['tmp_name'], $upload_location ) ) $this->trellis->skin->ajax_output( json_encode( array( 'error' => true, 'errormsg' => $this->trellis->lang['error_upload_move'] ) ) );
 
         # TODO: only run chmod if web user is 'nobody' (just have a setting)
-        @chmod( $upload_location, 0666 );
+        //@chmod( $upload_location, 0666 );
 
         $data['uid'] = $this->trellis->user['id'];
         $data['real_name'] = $file_name;
@@ -183,11 +183,11 @@ class td_func_attachments {
     {
         if ( is_array( $ids ) )
         {
-            if ( ! $files = $this->get( array( 'select' => array( 'real_name' ), 'where' => array( 'id', 'in', $ids ) ) ) ) return false;
+            if ( ! $files = $this->get( array( 'select' => array( 'real_name', 'extension' ), 'where' => array( 'id', 'in', $ids ) ) ) ) return false;
 
             foreach ( $files as &$f )
             {
-                @unlink( $this->trellis->cache->data['settings']['general']['upload_dir'] . $f['real_name'] );
+                @unlink( $this->trellis->cache->data['settings']['general']['upload_dir'] . $f['real_name'] . $f['extension'] );
             }
 
             $this->trellis->db->construct( array(
@@ -201,9 +201,9 @@ class td_func_attachments {
         {
             if ( ! $ids = intval( $ids ) ) return false;
 
-            if ( ! $f = $this->get_single_by_id( array( 'real_name' ), $ids ) ) return false;
+            if ( ! $f = $this->get_single_by_id( array( 'real_name' , 'extension'), $ids ) ) return false;
 
-            if ( ! @unlink( $this->trellis->cache->data['settings']['general']['upload_dir'] . $f['real_name'] ) ) return false;
+            if ( ! @unlink( $this->trellis->cache->data['settings']['general']['upload_dir'] . $f['real_name'] . $f['extension'] ) ) return false;
 
             $this->trellis->db->construct( array(
                                                        'delete'    => 'attachments',
@@ -225,9 +225,9 @@ class td_func_attachments {
     {
         if ( ! $id = intval( $id ) ) return false;
 
-        if ( ! $f = $this->get_single_by_id( array( 'real_name', 'original_name', 'mime', 'size' ), $id ) ) return false;
+        if ( ! $f = $this->get_single_by_id( array( 'real_name', 'original_name', 'mime', 'size', 'extension' ), $id ) ) return false;
 
-        if ( ! is_readable( ( $file = $this->trellis->cache->data['settings']['general']['upload_dir'] . $f['real_name'] ) ) ) return false;
+        if ( ! is_readable( ( $file = $this->trellis->cache->data['settings']['general']['upload_dir'] . $f['real_name'] . $f['extension'] ) ) ) return false;
 
         if ( $f['mime'] )
         {

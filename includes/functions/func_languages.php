@@ -236,11 +236,17 @@ class td_func_languages {
         if ( ! $xml = @simplexml_load_file( $file ) ) return false;
 
         if ( $xml->getName() != 'language' ) return false;
-        if ( ! ( $key = $this->trellis->sanitize_data( base64_decode( $xml['key'] ) ) ) ) return false;
-        if ( ! ( $name = $this->trellis->sanitize_data( base64_decode( $xml['name'] ) ) ) ) return false;
-        if ( ! ( $version = $this->trellis->sanitize_data( base64_decode( $xml['version'] ) ) ) ) return false;
-        if ( ! ( $exported = $this->trellis->sanitize_data( base64_decode( $xml['exported'] ) ) ) ) return false;
+        if ( ! ( $key = $this->trellis->sanitize_data(  $xml['key'] ) ) )  return false;
+        if ( ! ( $name = $this->trellis->sanitize_data(  $xml['name'] ) ) )  return false;
+        if ( ! ( $version = $this->trellis->sanitize_data(  $xml['version'] ) ) )  return false;
+        if ( ! ( $exported = $this->trellis->sanitize_data(  $xml['exported'] ) ) )  return false;
 
+		//if ( ! ( $key = $this->trellis->sanitize_data( base64_decode( $xml['key'] ) ) ) ) return false;
+        //if ( ! ( $name = $this->trellis->sanitize_data( base64_decode( $xml['name'] ) ) ) ) return false;
+        //if ( ! ( $version = $this->trellis->sanitize_data( base64_decode( $xml['version'] ) ) ) ) return false;
+        //if ( ! ( $exported = $this->trellis->sanitize_data( base64_decode( $xml['exported'] ) ) ) ) return false;
+
+		
         if ( ! $this->check_key( $key ) ) return false;
         if ( $version != $this->trellis->version_number ) return false;
 
@@ -257,7 +263,8 @@ class td_func_languages {
         foreach ( $xml as $f )
         {
             if ( $f->getName() != 'file' ) return false;
-            if ( ! ( $this->trellis->sanitize_data( $file = base64_decode( $f['name'] ) ) ) ) return false;
+            if ( ! ( $this->trellis->sanitize_data( $file =  $f['name'] ) ) )  return false;
+			//if ( ! ( $this->trellis->sanitize_data( $file = base64_decode( $f['name'] ) ) ) ) return false;
 
             if ( ! $handle = fopen( $dir .'/'. $file, 'wb' ) ) return false;
 
@@ -277,8 +284,11 @@ class td_func_languages {
             {
                 if ( $b->getName() != 'bit' ) return false;
 
-                if ( ! ( $this->trellis->sanitize_data( $bk = base64_decode( $b->key ) ) ) ) return false;
-                if ( ! ( $this->trellis->sanitize_data( $bv = base64_decode( $b->value ) ) ) ) return false;
+                if ( ! ( $this->trellis->sanitize_data( $bk =  $b->key ) ) )  return false;
+                //if ( ! ( $this->trellis->sanitize_data( $bk = base64_decode( $b->key ) ) ) ) return false;
+                
+				if ( ! ( $this->trellis->sanitize_data( $bv =  $b->value ) ) )  return false;
+				//if ( ! ( $this->trellis->sanitize_data( $bv = base64_decode( $b->value ) ) ) ) return false;
 
                 if ( $file == 'lang_email_content.php' )
                 {
@@ -348,19 +358,23 @@ class td_func_languages {
 
         $key = $doc->createAttribute( 'key' );
         $pack->appendChild( $key );
-        $key->appendChild( $doc->createTextNode( base64_encode( $l['key'] ) ) );
+        //$key->appendChild( $doc->createTextNode( base64_encode( $l['key'] ) ) );
+		$key->appendChild( $doc->createTextNode(  $l['key'] ) ) ;
 
         $name = $doc->createAttribute( 'name' );
         $pack->appendChild( $name );
-        $name->appendChild( $doc->createTextNode( base64_encode( $l['name'] ) ) );
+        $name->appendChild( $doc->createTextNode(  $l['name'] ) ) ;
+		//$name->appendChild( $doc->createTextNode( base64_encode( $l['name'] ) ) );
 
         $version = $doc->createAttribute( 'version' );
         $pack->appendChild( $version );
-        $version->appendChild( $doc->createTextNode( base64_encode( $this->trellis->version_number ) ) );
+        $version->appendChild( $doc->createTextNode(  $this->trellis->version_number ) ) ;
+		//$version->appendChild( $doc->createTextNode( base64_encode( $this->trellis->version_number ) ) );
 
         $exported = $doc->createAttribute( 'exported' );
         $pack->appendChild( $exported );
-        $exported->appendChild( $doc->createTextNode( base64_encode( time() ) ) );
+        $exported->appendChild( $doc->createTextNode(  time() ) ) ;
+		//$exported->appendChild( $doc->createTextNode( base64_encode( time() ) ) );
 
         foreach( $files as &$f )
         {
@@ -369,8 +383,10 @@ class td_func_languages {
 
             $name = $doc->createAttribute( 'name' );
             $file->appendChild( $name );
-            $name->appendChild( $doc->createTextNode( base64_encode( $f ) ) );
+            $name->appendChild( $doc->createTextNode(  $f ) );
+			//$name->appendChild( $doc->createTextNode( base64_encode( $f ) ) );
 
+			
             require $dir .'/'. $f;
 
             foreach ( $lang as $k => &$v )
@@ -380,11 +396,13 @@ class td_func_languages {
 
                 $key = $doc->createElement( 'key' );
                 $bit->appendChild( $key );
-                $key->appendChild( $doc->createTextNode( base64_encode( $k ) ) );
+                $key->appendChild( $doc->createTextNode(  $k ) );
+				//$key->appendChild( $doc->createTextNode( base64_encode( $k ) ) );
 
                 $value = $doc->createElement( 'value' );
                 $bit->appendChild( $value );
-                $value->appendChild( $doc->createTextNode( base64_encode( $v ) ) );
+                $value->appendChild( $doc->createTextNode(  $v ) );
+				//$value->appendChild( $doc->createTextNode( base64_encode( $v ) ) );
             }
 
             unset( $lang );

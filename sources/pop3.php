@@ -42,6 +42,8 @@ define( "TD_PATH", "../" );
 define( 'TD_INC', TD_PATH ."includes/" );
 define( 'TD_SRC', TD_PATH ."sources/" );
 define( 'TD_SKIN', TD_PATH ."skin/" );
+define( 'TD_CLASS', TD_PATH ."includes/classes/class_" );
+define( 'TD_FUNC', TD_PATH ."includes/functions/func_" );
 
 define( 'TD_DEBUG', false );
 

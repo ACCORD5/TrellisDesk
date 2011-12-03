@@ -5,7 +5,9 @@ $config['cookie_key'] = 'your unique cookie key phrase goes here';
 $config['session_key'] = 'your unique session key phrase goes here';
 $config['rss_key'] = 'your unique rss key phrase goes here';
 $config['flatfile_key'] = '';
-
+$data_path=getcwd();
+$data_path=$data_path.'/data/';
+$data_path = str_replace("install/", "", $data_path);
+$config['data_path'] = $data_path;
 $config['debug_level'] = 0;
-
 ?>
