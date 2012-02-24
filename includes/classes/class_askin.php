@@ -73,7 +73,7 @@ class td_class_askin {
         $this->add_sub_nav( 6,    1,    '{lang.menu_documentation}',         'http://docs.accord5.com/'                                            );
         $this->add_sub_nav( 6,    2,    '{lang.menu_p2p_support}',            'http://forums.accord5.com/index.php?showforum=22'                    );
         $this->add_sub_nav( 6,    3,    '{lang.menu_official_support}',        'http://customer.accord5.com/'                                        );
-        $this->add_sub_nav( 6,    4,    '{lang.menu_bug_tracker}',             'http://trac6.assembla.com/trellisdesk'                                );
+        $this->add_sub_nav( 6,    4,    '{lang.menu_bug_tracker}',             'https://github.com/ACCORD5/TrellisDesk/issues'                                );
 
         $this->add_popup_nav( 'ticket_control', 1, '{lang.menu_manage_tickets}',        'admin.php?section=manage&amp;page=tickets'        );
         $this->add_popup_nav( 'ticket_control', 2, '{lang.menu_manage_priorities}',        'admin.php?section=manage&amp;page=priorities'    );
