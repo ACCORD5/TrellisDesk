@@ -17,7 +17,7 @@ $lang = array(
 'my_signature' => 'My Signature',
 'alert_settings_updated' => 'Your ACP Settings have been successfully updated.',
 'hey_you_title' => 'Hey... you! Yeah, you!',
-'hey_you_msg' => 'Since you\'re reading this paragraph right now, it\'s safe to say that you are a Trellis Desk user. And we want to hear what you, the user, thinks about our software! Please visit the <a href="http://trac.assembla.com/trellisdesk" target="_blank">ACCORD5 bug tracker</a> where you can report bugs or suggest any features you\'d like to see in future versions of Trellis Desk. Or, if you\'re not feeling that adventurous, just drop us a message at <a href="mailto:info@accord5.com">info@accord5.com</a>. We really want to hear what you think about Trellis Desk!',
+'hey_you_msg' => 'Since you\'re reading this paragraph right now, it\'s safe to say that you are a Trellis Desk user. And we want to hear what you, the user, thinks about our software! Please visit the <a href="https://github.com/ACCORD5/TrellisDesk/issues" target="_blank">ACCORD5 issue tracker</a> where you can report bugs or suggest any features you\'d like to see in future versions of Trellis Desk. Or, if you\'re not feeling that adventurous, just drop us a message at <a href="mailto:info@accord5.com">info@accord5.com</a>. We really want to hear what you think about Trellis Desk!',
 'email_notifications' => 'Email Notifications',
 'email_ticket' => 'Ticket Notifications',
 'email_user_approve' => 'New User Approval',
