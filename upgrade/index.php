@@ -473,7 +473,7 @@ function do_output($content, $step=0)
             <!-- GLOBAL: Copyright bar -->
             <div id='powerbar'>
                 <div class='righty' style='font-weight: normal'>Designed by ACCORD5 in California</div>
-                <div class='lefty'>Powered by Trellis Desk <% VERSION %>, &copy; <% YEAR %> <a href='http://www.accord5.com/'>ACCORD5</a></div>
+                <div class='lefty'>Powered by Trellis Desk <% VERSION %>, &copy; <% YEAR %> <a href='http://www.accord5.com/' target='_blank'>ACCORD5</a></div>
             </div>
 
         </div>
