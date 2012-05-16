@@ -3,7 +3,7 @@
 /**
  * Trellis Desk
  *
- * @copyright  Copyright (C) 2009-2011 ACCORD5. All rights reserved.
+ * @copyright  Copyright (C) 2009-2012 ACCORD5. All rights reserved.
  * @license    GNU General Public License version 3 or later; see LICENSE.txt
  */
 
