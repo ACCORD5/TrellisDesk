@@ -14,8 +14,8 @@ define( 'IN_TD', true );
 # Lets Play Nice With Output
 #=============================
 
-ob_end_clean();
 ob_start();
+ob_end_clean();
 
 #=============================
 # Safe and Secure
