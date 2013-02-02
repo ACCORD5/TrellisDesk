@@ -237,17 +237,17 @@ class td_class_skin {
         $this->set_var( 'copyright', $copyright );
         $this->set_var( 'extra_l', $this->trellis->input['extra_l'] );
 
-        $this->set_var( 'user', &$this->trellis->user );
+        $this->set_var( 'user', $this->trellis->user );
         $this->set_var( 'cache', array( 'settings' => &$this->trellis->cache->data['settings'] ) ); # TODO: let's try to all cache references in templates for speed
-        $this->set_var( 'input', &$this->trellis->input );
+        $this->set_var( 'input', $this->trellis->input );
 
-        $this->set_var( 'lang', &$this->trellis->lang );
+        $this->set_var( 'lang', $this->trellis->lang );
 
         $self = $this->trellis->config['hd_url'] .'/index.php';
 
         if ( $this->trellis->input['act'] != 'logout' && $_SERVER['QUERY_STRING'] ) $self .= '?'. $this->trellis->sanitize_data( $_SERVER['QUERY_STRING'] );
 
-        $this->set_var( 'self', &$self );
+        $this->set_var( 'self', $self );
 
         $this->set_var( 'enable_disable_radio', array( 1 => $this->trellis->lang['enabled'], 0 => $this->trellis->lang['disabled'] ) );
         $this->set_var( 'yes_no_radio', array( 1 => $this->trellis->lang['yes'], 0 => $this->trellis->lang['no'] ) );

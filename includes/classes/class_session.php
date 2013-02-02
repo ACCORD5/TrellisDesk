@@ -84,7 +84,7 @@ class td_class_session {
 
                     if ( is_array( $this->user['ugroup_sub'] ) && ! empty( $this->user['ugroup_sub'] ) )
                     {
-                        $this->merge_groups( &$this->user, $this->user['ugroup_sub'] );
+                        $this->merge_groups( $this->user, $this->user['ugroup_sub'] );
                     }
 
                     $authorized = 1;
