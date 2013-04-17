@@ -514,7 +514,7 @@ class td_func_languages {
 
     public function check_key( $key )
     {
-        return preg_match( '/^[a-z0-9]*$/', $key ) ;
+        return preg_match( '/^[a-zA-Z0-9_-]*$/', $key ) ;
     }
 
 }
